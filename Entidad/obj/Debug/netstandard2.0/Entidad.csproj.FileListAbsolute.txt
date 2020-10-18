@@ -1,0 +1,9 @@
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\bin\Debug\netstandard2.0\Entidad.deps.json
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\bin\Debug\netstandard2.0\Entidad.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\bin\Debug\netstandard2.0\Entidad.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.AssemblyInfo.cs
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Entidad\obj\Debug\netstandard2.0\Entidad.pdb
