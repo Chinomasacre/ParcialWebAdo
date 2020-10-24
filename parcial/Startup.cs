@@ -1,3 +1,4 @@
+using System.Transactions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -7,6 +8,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using Datos;
+using Microsoft.EntityFrameworkCore;
 
 namespace parcial
 {
@@ -22,6 +25,8 @@ namespace parcial
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext <ParcialContext>(p=>p.UseSqlServer(connectionString));
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
            /* services.AddSpaStaticFiles(configuration =>

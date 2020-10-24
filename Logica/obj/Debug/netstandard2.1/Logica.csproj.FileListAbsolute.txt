@@ -1,0 +1,14 @@
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Logica.deps.json
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Logica.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Logica.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Entidad.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\bin\Debug\netstandard2.1\Entidad.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.AssemblyInfo.cs
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.csproj.CopyComplete
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Logica\obj\Debug\netstandard2.1\Logica.pdb

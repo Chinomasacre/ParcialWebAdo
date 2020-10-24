@@ -5,6 +5,7 @@ using Logica;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using parcial.Models;
+using Datos;
 
 namespace parcial.Controllers
 {
@@ -14,12 +15,9 @@ namespace parcial.Controllers
     public class PersonaController:ControllerBase
     {
         private readonly PersonaService _personaService;
-        public IConfiguration Configuration { get; }
-        public PersonaController(IConfiguration configuration)
+        public PersonaController(ParcialContext context)
         {
-        Configuration = configuration;
-        string connectionString = Configuration["ConnectionStrings:DefaultConnection"];
-        _personaService = new PersonaService(connectionString);
+         _personaService = new PersonaService(context);
         }
         // GET: api/Persona
         [HttpGet]
@@ -47,12 +45,7 @@ namespace parcial.Controllers
                 Identificacion = personaInput.Identificacion,
                 Nombre = personaInput.Nombre,
                 Edad = personaInput.Edad,
-                Sexo = personaInput.Sexo,
-                Departamento = personaInput.Departamento,
-                Ciudad = personaInput.Ciudad,
-                Valor = personaInput.Valor,
-                Modalidad = personaInput.Modalidad,
-                Fecha = personaInput.Fecha
+                Sexo = personaInput.Sexo
             };
             return persona;
         }

@@ -1,11 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/lslqvSMDKWA8+uEX1qEXdvmG+i3XFbGgctdunguAWnkFP0kY1T8WSHFgC3iOIE2KrWpeYxp1VAL+fn6eaY1Ow==",
+  "dgSpecHash": "4NZDNs1sbBj6I36Xqy+y2pS0GPbRmqQQ0Wiiuh7yrKjUkFOWsTLEoXW5E3C/XevIyDO0mGlvUVlD0Za47apP1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\Home\\Desktop\\2020-2\\intento 2\\parcialweb-master\\Entidad\\Entidad.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Home\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Home\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "C:\\Users\\Home\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0-rc.2.20475.5\\system.componentmodel.annotations.5.0.0-rc.2.20475.5.nupkg.sha512"
   ],
   "logs": []
 }

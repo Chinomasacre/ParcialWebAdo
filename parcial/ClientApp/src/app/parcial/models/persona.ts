@@ -2,7 +2,7 @@ export class Persona {
     identificacion: string;
     nombre: string;
     sexo: string;
-    edad: number;
+    edad: number;
     departamento: string;
     ciudad: string;
     valor: number;

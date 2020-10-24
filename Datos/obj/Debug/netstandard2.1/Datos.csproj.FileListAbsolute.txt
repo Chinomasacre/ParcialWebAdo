@@ -1,0 +1,12 @@
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\bin\Debug\netstandard2.1\Datos.deps.json
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\bin\Debug\netstandard2.1\Datos.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\bin\Debug\netstandard2.1\Datos.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\bin\Debug\netstandard2.1\Entidad.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\bin\Debug\netstandard2.1\Entidad.pdb
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfoInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.AssemblyInfo.cs
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.csproj.CopyComplete
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.dll
+C:\Users\Home\Desktop\2020-2\intento 2\parcialweb-master\Datos\obj\Debug\netstandard2.1\Datos.pdb

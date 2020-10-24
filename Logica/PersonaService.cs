@@ -1,40 +1,45 @@
-﻿using System;
+﻿using System.Security.Permissions;
+using System.Security.AccessControl;
+using System;
 using System.Collections.Generic;
 using Datos;
 using Entidad;
+using System.Linq;
 
 namespace Logica
 {
     public class PersonaService
     {
-        private readonly ConnectionManager _conexion;
-        private readonly PersonaRepository _repositorio;
-        public PersonaService(string connectionString)
-        {
-            _conexion = new ConnectionManager(connectionString);
-            _repositorio = new PersonaRepository(_conexion);
+        private readonly ParcialContext _context;
+        public PersonaService(ParcialContext context){
+            _context = context;
         }
+
         public GuardarPersonaResponse Guardar(Persona persona)
         {
             try
             {
-                _conexion.Open();
-                _repositorio.Guardar(persona);
-                _conexion.Close();
+                var personaBuscada = _context.Personas.Find(persona.Identificacion);
+                if(personaBuscada != null){
+                    return new GuardarPersonaResponse("Error, ya registrarada");
+                }
+                _context.Personas.Add(persona);
+                _context.SaveChanges();
                 return new GuardarPersonaResponse(persona);
             }
             catch (Exception e)
             {
                 return new GuardarPersonaResponse($"Error de la Aplicacion: {e.Message}");
             }
-            finally { _conexion.Close(); }
+            finally { }
         }
         public List<Persona> ConsultarTodos()
         {
-            _conexion.Open();
-            List<Persona> personas = _repositorio.ConsultarTodos();
-            _conexion.Close();
+            List<Persona> personas = _context.Personas.ToList();
             return personas;
+        }
+        public Persona BuscarxIdentificcion(string identificacion){
+            return _context.Personas.Find(identificacion);
         }
     }
     public class GuardarPersonaResponse 
@@ -53,4 +58,5 @@ namespace Logica
         public string Mensaje { get; set; }
         public Persona Persona { get; set; }
     }
+    
 }

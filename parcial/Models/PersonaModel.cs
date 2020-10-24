@@ -30,11 +30,6 @@ namespace parcial.Models
             Nombre = persona.Nombre;
             Edad = persona.Edad;
             Sexo = persona.Sexo;
-            Departamento = persona.Sexo;
-            Ciudad = persona.Ciudad;
-            Valor = persona.Valor;
-            Modalidad = persona.Modalidad;
-            Fecha = persona.Fecha;
         }
     }
 }
