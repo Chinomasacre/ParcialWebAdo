@@ -1,4 +1,5 @@
-﻿using System.Security.Permissions;
+﻿using System.Threading;
+using System.Security.Permissions;
 using System.Security.AccessControl;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ namespace Logica
             _context = context;
         }
 
-        public GuardarPersonaResponse Guardar(Persona persona)
+        public GuardarPersonaResponse Guardar(Persona persona,Ayuda ayuda)
         {
             try
             {
@@ -24,6 +25,7 @@ namespace Logica
                     return new GuardarPersonaResponse("Error, ya registrarada");
                 }
                 _context.Personas.Add(persona);
+                _context.Ayudas.Add(ayuda);
                 _context.SaveChanges();
                 return new GuardarPersonaResponse(persona);
             }
@@ -36,7 +38,12 @@ namespace Logica
         public List<Persona> ConsultarTodos()
         {
             List<Persona> personas = _context.Personas.ToList();
+
             return personas;
+        }
+        public List<Ayuda> ConsultarTodosAyudas(){
+            List<Ayuda> ayudas = _context.Ayudas.ToList();
+            return ayudas;
         }
         public Persona BuscarxIdentificcion(string identificacion){
             return _context.Personas.Find(identificacion);

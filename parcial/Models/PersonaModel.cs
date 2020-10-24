@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Entidad;
 namespace parcial.Models
 {
@@ -24,12 +25,22 @@ namespace parcial.Models
         {
 
         }
-        public PersonaViewModel(Persona persona)
+        public PersonaViewModel(Persona persona,List<Ayuda> ayudas)
         {
             Identificacion = persona.Identificacion;
             Nombre = persona.Nombre;
             Edad = persona.Edad;
             Sexo = persona.Sexo;
+            foreach(var ayuda in ayudas){
+                if(persona.Identificacion == ayuda.personaIdentificacion){
+                    Departamento = ayuda.Departamento;
+                    Ciudad = ayuda.Ciudad;
+                    Valor = ayuda.Valor;
+                    Modalidad = ayuda.Modalidad;
+                    Fecha = ayuda.Fecha;
+                }
+            }
+            
         }
     }
 }

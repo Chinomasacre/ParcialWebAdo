@@ -23,15 +23,20 @@ namespace parcial.Controllers
         [HttpGet]
         public IEnumerable<PersonaViewModel> Gets()
         {
-            var personas = _personaService.ConsultarTodos().Select(p=> new PersonaViewModel(p));
-            return personas;
+            var ayudas = _personaService.ConsultarTodosAyudas();
+            var personas = _personaService.ConsultarTodos();
+
+            var personass = personas.Select(p=>new PersonaViewModel(p,ayudas));
+
+            return personass;
         }
         // POST: api/Persona
         [HttpPost]
         public ActionResult<PersonaViewModel> Post(PersonaInputModel personaInput)
         {
             Persona persona = MapearPersona(personaInput);
-            var response = _personaService.Guardar(persona);
+            Ayuda ayuda = MapearAyuda(personaInput);
+            var response = _personaService.Guardar(persona,ayuda);
             if (response.Error)
             {
                 return BadRequest(response.Mensaje);
@@ -48,6 +53,19 @@ namespace parcial.Controllers
                 Sexo = personaInput.Sexo
             };
             return persona;
+        }
+        private Ayuda MapearAyuda(PersonaInputModel personaInput)
+        {
+            var ayuda = new Ayuda
+                {
+                personaIdentificacion = personaInput.Identificacion,
+                Departamento = personaInput.Departamento,
+                Ciudad = personaInput.Ciudad,
+                Valor = personaInput.Valor,
+                Modalidad = personaInput.Modalidad,
+                Fecha = personaInput.Fecha
+            };
+            return ayuda;
         }
 
     }

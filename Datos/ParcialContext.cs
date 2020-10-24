@@ -9,5 +9,6 @@ namespace Datos
 
         }
         public DbSet<Persona> Personas {get;set;}
+        public DbSet<Ayuda> Ayudas{get;set;}
     }
 }
