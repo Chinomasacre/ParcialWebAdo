@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using Datos;
 using Entidad;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace Logica
 {
@@ -16,47 +17,42 @@ namespace Logica
             _context = context;
         }
 
-        public GuardarPersonaResponse Guardar(Persona persona,Ayuda ayuda)
+        public GuardarResponse Guardar(Persona persona)
         {
             try
             {
                 var personaBuscada = _context.Personas.Find(persona.Identificacion);
                 if(personaBuscada != null){
-                    return new GuardarPersonaResponse("Error, ya registrarada");
+                    return new GuardarResponse("Error, ya registrarada");
                 }
                 _context.Personas.Add(persona);
-                _context.Ayudas.Add(ayuda);
                 _context.SaveChanges();
-                return new GuardarPersonaResponse(persona);
+                return new GuardarResponse(persona);
             }
             catch (Exception e)
             {
-                return new GuardarPersonaResponse($"Error de la Aplicacion: {e.Message}");
+                return new GuardarResponse($"Error de la Aplicacion: {e.Message}");
             }
             finally { }
         }
         public List<Persona> ConsultarTodos()
         {
-            List<Persona> personas = _context.Personas.ToList();
-
+            List<Persona> personas = _context.Personas.Include(p => p.Ayuda).ToList();
             return personas;
         }
-        public List<Ayuda> ConsultarTodosAyudas(){
-            List<Ayuda> ayudas = _context.Ayudas.ToList();
-            return ayudas;
-        }
+        
         public Persona BuscarxIdentificcion(string identificacion){
             return _context.Personas.Find(identificacion);
         }
     }
-    public class GuardarPersonaResponse 
+    public class GuardarResponse 
     {
-        public GuardarPersonaResponse(Persona persona)
+        public GuardarResponse(Persona persona)
         {
             Error = false;
             Persona = persona;
         }
-        public GuardarPersonaResponse(string mensaje)
+        public GuardarResponse(string mensaje)
         {
             Error = true;
             Mensaje = mensaje;

@@ -4,8 +4,7 @@
             </div>
           </div>
           <hr>
-        
-  <table class="table table-striped" *ngIf='personas && personas.length'>
+  <table class="table table-striped" *ngIf='personas && personas.length'>
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -20,19 +19,18 @@
         <th scope="col">Fecha</th>
       </tr>
     </thead>
-
     <tbody>
       <tr *ngFor="let persona of personas; index as i ">
         <th scope="row">{{ i + 1 }}</th>
-        <td>{{ persona.identificacion }} </td>
-        <td>{{ persona.nombre }}</td>
-        <td>{{ persona.sexo }}</td>
-        <td>{{ persona.edad }}</td>
-        <td>{{ persona.departamento}}</td>
-        <td>{{ persona.ciudad }}</td>
-        <td>{{persona.valor}}</td>
-        <td>{{ persona.modalidad}}</td>
-        <td>{{ persona.fecha}}</td>
+        <td>{{ persona.identificacion}} </td>
+        <td>{{ persona.nombre}} </td>
+        <td>{{ persona.sexo}} </td>
+        <td>{{ persona.edad}} </td>
+        <td>{{ persona.ayuda.departamento}}</td>
+        <td>{{ persona.ayuda.ciudad }}</td>
+        <td>{{ persona.ayuda.valor}}</td>
+        <td>{{ persona.ayuda.modalidad}}</td>
+        <td>{{ persona.ayuda.fecha}}</td>
       </tr>
     </tbody>
   </table>

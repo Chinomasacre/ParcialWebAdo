@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PersonaService } from './../../services/persona.service';
 import { Persona } from './../models/persona';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-persona-registro',
@@ -12,14 +13,15 @@ export class PersonaRegistroComponent implements OnInit {
   constructor(private personaService: PersonaService) { }
 
   ngOnInit() {
-    this.persona =new Persona;
+    this.persona =new Persona();
   }
   add(){
     this.personaService.post(this.persona).subscribe(p => {
       if (p != null) {
-        alert('Persona creada!');
         this.persona = p;
       }
     });
+
+    
   }
 }

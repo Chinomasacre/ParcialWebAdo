@@ -8,9 +8,8 @@ namespace Entidad
     public class Ayuda
     {
         [Key]
-        [Column(TypeName = "varchar(11)")]
-        public string personaIdentificacion {get;set;}
-
+        public int AyudaId {get;set;}
+        
         [Column(TypeName = "varchar(20)")]
         public string Departamento {get;set;}
 

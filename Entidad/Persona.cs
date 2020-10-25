@@ -8,6 +8,10 @@ namespace Entidad
     public class Persona
     
     {
+        public Persona() {
+            Ayuda = new Ayuda();
+        }
+
         [Key]
         [Column(TypeName = "varchar(11)")]
         public string Identificacion {get;set;}
@@ -19,9 +23,9 @@ namespace Entidad
 
         [Column(TypeName = "varchar(11)")]
         public string Sexo {get;set;}
-        
-    
-        public int Edad {get;set;}
-        
+
+        public int Edad {get;set;}   
+
+        public Ayuda Ayuda { get; set; }    
     }
 }

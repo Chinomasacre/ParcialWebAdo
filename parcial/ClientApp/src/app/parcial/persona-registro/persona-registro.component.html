@@ -5,8 +5,9 @@
                 <form >                        
                     <div class="form-group">
                         <label>Identificacion</label>
-                        <input type="text"  name="identificacion"  [(ngModel)]="persona.identificacion" class="form-control" />
+                        <input type="text"  name="identificacion"  [(ngModel)]="persona.identificacion" class="form-control" />
                     </div>
+
                     <div class="form-group">
                         <label>Nombre</label>
                         <input type="text"  name="nombre"  [(ngModel)]="persona.nombre" class="form-control" />
@@ -21,23 +22,23 @@
                     </div>
                     <div class="form-group">
                          <label>Departamento</label>
-                         <input type="text"  name="departamento"  [(ngModel)]="persona.departamento" class="form-control" />
+                         <input type="text"  name="departamento"  [(ngModel)]="persona.ayuda.departamento" class="form-control" />
                     </div>
                     <div class="form-group">
                           <label>Ciudad</label>
-                          <input type="text"  name="ciudad"  [(ngModel)]="persona.ciudad" class="form-control" />
+                          <input type="text"  name="ciudad"  [(ngModel)]="persona.ayuda.ciudad" class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Valor del apoyo</label>
-                        <input type="number"  name="valor"  [(ngModel)]="persona.valor" class="form-control" />
+                        <input type="number"  name="valor"  [(ngModel)]="persona.ayuda.valor" class="form-control" />
                     </div>
                    <div class="form-group">
                             <label>Modalidad de apoyo</label>
-                            <input type="text"  name="modalidad"  [(ngModel)]="persona.modalidad" class="form-control" />
+                            <input type="text"  name="modalidad"  [(ngModel)]="persona.ayuda.modalidad" class="form-control" />
                         </div>
                     <div class="form-group">
                         <label>Fecha</label>
-                        <input type="date"  name="fecha" min="2017-04-01" max="2030-04-20" [(ngModel)]="persona.fecha" class="form-control" />
+                        <input type="date"  name="fecha" min="2017-04-01" max="2030-04-20" [(ngModel)]="persona.ayuda.fecha" class="form-control" />
                     </div>
 
                     <div class="text-center">

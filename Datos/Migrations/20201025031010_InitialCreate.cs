@@ -8,10 +8,11 @@ namespace Datos.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Ayudas",
+                name: "Ayuda",
                 columns: table => new
                 {
-                    personaIdentificacion = table.Column<string>(type: "varchar(11)", nullable: false),
+                    AyudaId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     Departamento = table.Column<string>(type: "varchar(20)", nullable: true),
                     Ciudad = table.Column<string>(type: "varchar(15)", nullable: true),
                     Valor = table.Column<decimal>(type: "decimal(11)", nullable: false),
@@ -20,7 +21,7 @@ namespace Datos.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ayudas", x => x.personaIdentificacion);
+                    table.PrimaryKey("PK_Ayuda", x => x.AyudaId);
                 });
 
             migrationBuilder.CreateTable(
@@ -30,21 +31,33 @@ namespace Datos.Migrations
                     Identificacion = table.Column<string>(type: "varchar(11)", nullable: false),
                     Nombre = table.Column<string>(type: "varchar(20)", nullable: true),
                     Sexo = table.Column<string>(type: "varchar(11)", nullable: true),
-                    Edad = table.Column<int>(type: "int", nullable: false)
+                    Edad = table.Column<int>(nullable: false),
+                    AyudaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Personas", x => x.Identificacion);
+                    table.ForeignKey(
+                        name: "FK_Personas_Ayuda_AyudaId",
+                        column: x => x.AyudaId,
+                        principalTable: "Ayuda",
+                        principalColumn: "AyudaId",
+                        onDelete: ReferentialAction.Restrict);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Personas_AyudaId",
+                table: "Personas",
+                column: "AyudaId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Ayudas");
+                name: "Personas");
 
             migrationBuilder.DropTable(
-                name: "Personas");
+                name: "Ayuda");
         }
     }
 }

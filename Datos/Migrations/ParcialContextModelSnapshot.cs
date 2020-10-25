@@ -15,14 +15,16 @@ namespace Datos.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .UseIdentityColumns()
+                .HasAnnotation("ProductVersion", "3.1.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.0-rc.2.20475.6");
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Entidad.Ayuda", b =>
                 {
-                    b.Property<string>("personaIdentificacion")
-                        .HasColumnType("varchar(11)");
+                    b.Property<int>("AyudaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Ciudad")
                         .HasColumnType("varchar(15)");
@@ -39,15 +41,18 @@ namespace Datos.Migrations
                     b.Property<decimal>("Valor")
                         .HasColumnType("decimal(11)");
 
-                    b.HasKey("personaIdentificacion");
+                    b.HasKey("AyudaId");
 
-                    b.ToTable("Ayudas");
+                    b.ToTable("Ayuda");
                 });
 
             modelBuilder.Entity("Entidad.Persona", b =>
                 {
                     b.Property<string>("Identificacion")
                         .HasColumnType("varchar(11)");
+
+                    b.Property<int?>("AyudaId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Edad")
                         .HasColumnType("int");
@@ -60,7 +65,16 @@ namespace Datos.Migrations
 
                     b.HasKey("Identificacion");
 
+                    b.HasIndex("AyudaId");
+
                     b.ToTable("Personas");
+                });
+
+            modelBuilder.Entity("Entidad.Persona", b =>
+                {
+                    b.HasOne("Entidad.Ayuda", "Ayuda")
+                        .WithMany()
+                        .HasForeignKey("AyudaId");
                 });
 #pragma warning restore 612, 618
         }

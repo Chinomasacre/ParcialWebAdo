@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { PersonaService } from '../../services/persona.service';
 import { Persona } from '../models/persona';
 
