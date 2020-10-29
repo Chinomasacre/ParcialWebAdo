@@ -6,6 +6,9 @@ namespace parcial.Models
    
     public class PersonaInputModel
     {
+        public PersonaInputModel(){
+            
+        }
         public string Identificacion { get; set; }
         public string Nombre { get; set; }
         public int Edad { get; set; }

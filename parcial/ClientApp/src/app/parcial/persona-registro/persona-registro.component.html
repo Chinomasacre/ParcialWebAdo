@@ -1,52 +1,64 @@
 <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <h2>Registro de Personas</h2>
-                <form >                        
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+                <h2>Registro de Personas</h2>
+                <form [formGroup]="formGroup">                        
                     <div class="form-group">
                         <label>Identificacion</label>
-                        <input type="text"  name="identificacion"  [(ngModel)]="persona.identificacion" class="form-control" />
-                    </div>
-
+                        <input type="text"  name="identificacion" formControlName="identificacion"
+                                class="form-control" [ngClass]="{ 'is-invalid':  control.identificacion.errors}"/> 
+                        <div *ngIf="control.identificacion.errors" class="invalid-feedback">
+                                <div *ngIf="control.identificacion.errors.required">Se require la identificacion</div>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text"  name="nombre"  [(ngModel)]="persona.nombre" class="form-control" />
+                        <input type="text"name="nombre" formControlName="nombre"  
+                                class="form-control" [ngClass]="{ 'is-invalid':  control.nombre.errors}"/>
+                        <div *ngIf="control.nombre.errors" class="invalid-feedback">
+                                <div *ngIf="control.nombre.errors.required">Se require el nombre</div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label>sexo</label>
-                        <input type="text"  name="sexo"  [(ngModel)]="persona.sexo" class="form-control" />
-                    </div>
+                        <input type="text"  name="sexo" formControlName="sexo"
+                                class="form-control" [ngClass]="{ 'is-invalid':  control.sexo.errors}"/>
+                        <div *ngIf="control.sexo.errors && formGroup.get('sexo')" class="invalid-feedback">
+                                <div *ngIf="control.sexo.errors.required">Se require el sexo</div>
+                                <div *ngIf="control.sexo.errors.validSexo">{{control.sexo.errors.messageSexo}}</div>
+                        </div>
+                        </div>
                     <div class="form-group">
                         <label>Edad</label>
-                        <input type="number"  name="edad"  [(ngModel)]="persona.edad" class="form-control" />
+                        <input type="number"  name="edad" formControlName="edad" class="form-control" />
                     </div>
                     <div class="form-group">
                          <label>Departamento</label>
-                         <input type="text"  name="departamento"  [(ngModel)]="persona.ayuda.departamento" class="form-control" />
+                         <input type="text"  name="departamento" formControlName="departamento"  class="form-control" />
                     </div>
                     <div class="form-group">
                           <label>Ciudad</label>
-                          <input type="text"  name="ciudad"  [(ngModel)]="persona.ayuda.ciudad" class="form-control" />
+                          <input type="text"  name="ciudad" formControlName="ciudad"  class="form-control" />
                     </div>
                     <div class="form-group">
                         <label>Valor del apoyo</label>
-                        <input type="number"  name="valor"  [(ngModel)]="persona.ayuda.valor" class="form-control" />
+                        <input type="number"  name="valor" formControlName="valor"  class="form-control" />
                     </div>
                    <div class="form-group">
                             <label>Modalidad de apoyo</label>
-                            <input type="text"  name="modalidad"  [(ngModel)]="persona.ayuda.modalidad" class="form-control" />
+                            <input type="text"  name="modalidad" formControlName="modalidad" class="form-control" />
                         </div>
                     <div class="form-group">
                         <label>Fecha</label>
-                        <input type="date"  name="fecha" min="2017-04-01" max="2030-04-20" [(ngModel)]="persona.ayuda.fecha" class="form-control" />
+                        <input type="date"  name="fecha" formControlName="fecha"  min="2017-04-01" max="2030-04-20" class="form-control" />
                     </div>
 
                     <div class="text-center">
-                        <button class="btn btn-primary mr-1"(click)="add()">Register</button>
-                        <button class="btn btn-secondary" type="reset">Cancel</button>
+                        <button class="btn btn-primary mr-1"(click)="onSubmit()" [disabled]="formGroup.invalid">Register</button>
+                        <button class="btn btn-secondary" type="reset">Cancel</button>
                     </div>
                 </form>
-            </div>
-        </div>
+        </div>
     </div>
+</div>
     
