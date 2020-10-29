@@ -14,6 +14,7 @@ import { PersonaRegistroComponent } from './parcial/persona-registro/persona-reg
 import { PersonaConsultaComponent } from './parcial/persona-consulta/persona-consulta.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PersonaService} from './services/persona.service';
+import { FiltroPersonaPipe } from './pipe/filtro-persona.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PersonaService} from './services/persona.service';
     CounterComponent,
     FetchDataComponent,
     PersonaConsultaComponent,
-    PersonaRegistroComponent
+    PersonaRegistroComponent,
+    FiltroPersonaPipe
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

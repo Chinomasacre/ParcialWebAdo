@@ -20,7 +20,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let persona of personas; index as i ">
+      <tr *ngFor="let persona of personas|filtroPersona:searchText; index as i ">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ persona.identificacion}} </td>
         <td>{{ persona.nombre}} </td>
@@ -28,11 +28,15 @@
         <td>{{ persona.edad}} </td>
         <td>{{ persona.ayuda.departamento}}</td>
         <td>{{ persona.ayuda.ciudad }}</td>
-        <td>{{ persona.ayuda.valor}}</td>
+        <td>{{ persona.ayuda.valor|currency:'$':true}}</td>
         <td>{{ persona.ayuda.modalidad}}</td>
         <td>{{ persona.ayuda.fecha}}</td>
       </tr>
     </tbody>
   </table>
+<div class="form-group">
+        <label>Total</label>
+        <input type="number"  name="total" [(ngModel)]="valorTotal"  readonly/>
+</div>
 
     

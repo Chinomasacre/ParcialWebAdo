@@ -21,7 +21,5 @@ export class PersonaRegistroComponent implements OnInit {
         this.persona = p;
       }
     });
-
-    
   }
 }

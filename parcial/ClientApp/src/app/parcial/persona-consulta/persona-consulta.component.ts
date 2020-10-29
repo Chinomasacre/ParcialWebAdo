@@ -12,6 +12,7 @@ export class PersonaConsultaComponent implements OnInit {
 
   personas:Persona[];
   searchText:string;
+  valorTotal:number;
 
   constructor(private personaService:PersonaService) { }
 
@@ -23,5 +24,11 @@ export class PersonaConsultaComponent implements OnInit {
       this.personas = result;
     });
   }
-
+  sumarTotal(){
+    this.valorTotal =0;
+    
+    this.personas.forEach(element => {
+      this.valorTotal = this.valorTotal + element.ayuda.valor;
+    });
+  }
 }
